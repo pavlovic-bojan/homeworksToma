@@ -7,6 +7,7 @@ function App() {
   let divStyle = {
     backgroundColor: currentHour >=20 && currentHour <= 7 ? '#10375C' : '#EB8317',
     padding: '20px',
+    marginTop: '20px',
     color: 'white',
   }
 
@@ -25,9 +26,9 @@ function App() {
               >
                   Learn React
               </a>
-              <p style={divStyle}>
+              <div style={divStyle}>
                   Ovo je neki div
-              </p>
+              </div>
           </header>
       </div>
   );
