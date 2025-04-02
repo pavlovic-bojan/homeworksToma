@@ -3,9 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  let currentHour = new Date().getHours()
+  const currentHour = new Date().getHours()
   let divStyle = {
-    backgroundColor: currentHour >=20 && currentHour <= 7 ? '#10375C' : '#EB8317',
+    backgroundColor: currentHour >=20 || currentHour <= 7 ? '#10375C' : '#EB8317',
     padding: '20px',
     marginTop: '20px',
     color: 'white',
