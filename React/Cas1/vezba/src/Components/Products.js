@@ -6,14 +6,14 @@ const products = {
 };
 
 function Products(props) {
-    const pdv = Number(props.pdv);
+    const pdv = props.pdv;
     return (
         <>
             <ul>
                 {Object.entries(products).map(([product, price], index) => (
                     <li key={index}>
-                        {product} - cena bez pdv: {price} + pdv = {pdv}
-                                    <br/>cena sa pdv: {price + pdv}
+                        {product} - cena bez pdv: ${price} + pdv { pdv }%
+                                    <br/>cena sa pdv: ${((price * pdv)/100) + price}
                     </li>
                 ))}
             </ul>
