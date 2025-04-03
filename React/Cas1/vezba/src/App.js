@@ -23,7 +23,7 @@ function App() {
             </a>
             <p>Pozdrav ja se zovem {ime}</p>
             <p style={color}>Ovo je moji prvi react app</p>
-            <Products />
+            <Products pdv = '20' />
           </header>
         </div>
       </>

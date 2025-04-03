@@ -1,12 +1,20 @@
+const products = {
+    'iPhone13': 1000,
+    'iPhone14': 1100,
+    'iPhone15': 1200,
+    'iPhone16': 1300
+};
 
-const products = ['iPhone13','iPhone14','iPhone15','iPhone16']
-
-function Products() {
+function Products(props) {
+    const pdv = Number(props.pdv);
     return (
         <>
             <ul>
-                {products.map((product, index) => (
-                    <li key={index}>{product}</li>
+                {Object.entries(products).map(([product, price], index) => (
+                    <li key={index}>
+                        {product} - cena bez pdv: {price} + pdv = {pdv}
+                                    <br/>cena sa pdv: {price + pdv}
+                    </li>
                 ))}
             </ul>
         </>
