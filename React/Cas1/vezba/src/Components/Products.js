@@ -13,12 +13,16 @@ function Products(props) {
                 {Object.entries(products).map(([product, price], index) => (
                     <li key={index}>
                         {product} - cena bez pdv: ${price} + pdv { pdv }%
-                                    <br/>cena sa pdv: ${((price * pdv)/100) + price}
+                                    <br/>cena sa pdv: ${calculatePDV(price,pdv)}
                     </li>
                 ))}
             </ul>
         </>
     );
+}
+
+function calculatePDV (price, pdv){
+    return ((price * pdv)/100) + price
 }
 
 export default Products;
