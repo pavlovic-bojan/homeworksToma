@@ -27,6 +27,10 @@ function Products(props: { pdv: number; }) {
         setProductList(updatedProducts);
     }
 
+    function deleteAllProducts() {
+        setProductList({});
+    }
+
     return (
         <>
             <ul>
@@ -40,6 +44,7 @@ function Products(props: { pdv: number; }) {
                     </li>
                 ))}
             </ul>
+            <button onClick={deleteAllProducts}>Delete All Products</button>
         </>
     );
 }
