@@ -13,7 +13,7 @@ const products:ProductInterface = {
 
 function Products(props: { pdv: number; }) {
     let [pdv, setPdv] = useState(props.pdv)
-    function changePdv(e){
+    function changePdv(e: { target: { value: number; }; }){
         setPdv(e.target.value)
         console.log(pdv);
     }
