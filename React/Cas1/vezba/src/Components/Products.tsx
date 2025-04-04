@@ -13,9 +13,9 @@ const products:ProductInterface = {
 
 function Products(props: { pdv: number; }) {
     let [pdv, setPdv] = useState(props.pdv)
-
     let [productList, setProductList] = useState<ProductInterface>(products);
-
+    let [newProductName, setNewProductName] = useState<string>("");
+    let [newProductPrice, setNewProductPrice] = useState<number>(0);
 
     function changePdv(e: { target: { value: number; }; }){
         setPdv(e.target.value);
@@ -31,11 +31,37 @@ function Products(props: { pdv: number; }) {
         setProductList({});
     }
 
+    function addProduct() {
+        if (newProductName && newProductPrice > 0) {
+            const updatedProducts = { ...productList, [newProductName]: newProductPrice };
+            setProductList(updatedProducts);
+            setNewProductName("");
+            setNewProductPrice(0);
+        } else {
+            alert("Please provide a valid product name and price.");
+        }
+    }
+
     return (
         <>
             <ul>
+                <h2>Add New Product</h2>
+                <input
+                    type="text"
+                    placeholder="Product Name"
+                    value={newProductName}
+                    onInput={(e: { target: { value: string; }; }) => setNewProductName(e.target.value)}
+                />
+                <input
+                    type="number"
+                    placeholder="Product Price"
+                    value={newProductPrice}
+                    onInput={(e: { target: { value: number; }; }) => setNewProductPrice(Number(e.target.value))}
+                />
+                <button onClick={addProduct}>Add Product</button>
+                <br/>
                 <h1>Change Pdv tax</h1>
-                <input type="number" onInput={changePdv}/>
+                <input type="number" placeholder="Change Pdv tax" onInput={changePdv}/>
                 {Object.entries(productList).map(([product, price]: [string, number], index) => (
                     <li key={index}>
                         {product} - cena bez pdv: ${price} + pdv {pdv}%
@@ -50,7 +76,7 @@ function Products(props: { pdv: number; }) {
 }
 
 function calculatePDV(price: number, pdv: number): number {
-    return ((price * pdv)/100) + price
+    return ((price * pdv) / 100) + price
 }
 
 export default Products;
