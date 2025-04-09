@@ -1,12 +1,10 @@
-import VIDEOS from "./../videos.json"
-
-const AllVideos = () => {
+const AllVideos = ({videos}) => {
     return (
         <>
             <div className="container mt-4">
                 <h2 className="mb-4">YouTube Video List</h2>
                 <div className="row">
-                    {VIDEOS.map(video => (
+                    {videos.map(video => (
                         <div className="col-md-3 mb-4" key={video.id}>
                             <a href={video.url} target="_blank" rel="noopener noreferrer">
                                 <img

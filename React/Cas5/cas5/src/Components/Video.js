@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom"
-import VIDEOS from "../videos.json"
 
-const Video = () => {
+const Video = ({VIDEOS}) => {
     const { id } = useParams()
     const video = VIDEOS.find(v => v.id === Number(id))
 
