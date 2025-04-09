@@ -6,7 +6,11 @@ const SearchBar = () => {
             <form>
                 <label>
                     Search
-                    <input type="text" placeholder="Search..." onInput={e => SearchVideoByName(e.currentTarget.value)} />
+                    <input
+                        type="text"
+                        placeholder="Search..."
+                        onInput={e => SearchVideoByName(e.currentTarget.value)}
+                    />
                 </label>
             </form>
         </>
@@ -18,15 +22,16 @@ const SearchVideoByName = (name) => {
     let found = false
 
     VIDEOS.forEach(video => {
-        if (cleanedName === video.title.toLowerCase()) {
+        const videoTitle = video.title.toLowerCase()
+        if (videoTitle.includes(cleanedName) && cleanedName !== "") {
             found = true
         }
     })
 
     if (found) {
-        console.log("Našli smo video")
+        console.log("We found the video.")
     } else {
-        console.log("Nismo našli video")
+        console.log("We didn't find the video.")
     }
 }
 
