@@ -108,7 +108,7 @@ function Products(props: { pdv: number; }) {
                         onChange={changePdv}
                     />
                     <hr/>
-                    <h2 className="mb-4">Search Product</h2>
+                    <h2 className="mb-4">SearchBar Product</h2>
                     {searchResult !== null && (
                         <div className={`alert ${searchResult ? "alert-success" : "alert-danger"}`} role="alert">
                             {searchResult
@@ -119,7 +119,7 @@ function Products(props: { pdv: number; }) {
                     <input
                         type="text"
                         className="form-control mb-3"
-                        placeholder="Insert key word for Search"
+                        placeholder="Insert key word for SearchBar"
                         value={search}
                         onChange={searchField}
                     />
