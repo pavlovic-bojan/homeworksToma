@@ -1,14 +1,18 @@
-import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Movies from "./components/Movies"
-
+import MovieCard from "./Templates/Snippets/MovieCard";
 
 function App() {
-    const [title, setTitle] = useState('')
 
     return (
         <div className="bg-dark text-white">
-            <Movies />
+            <Router>
+                <Routes>
+                    <Route path="/" element={<Movies />} />
+                    <Route path="/movie/:title" element={<MovieCard />} />
+                </Routes>
+            </Router>
         </div>
     )
 }

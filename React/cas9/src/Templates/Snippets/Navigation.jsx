@@ -30,9 +30,9 @@ const Navigation = ({ onQuickSearch }) => {
                               onChange={(e) => setSearchText(e.target.value)}
                           />
                       </Form>
-                      <Nav.Link href="/browse-movies">Browse Movies</Nav.Link>
-                      <Nav.Link href="/login">Login</Nav.Link>
-                      <Nav.Link href="/register">Register</Nav.Link>
+                      <Nav.Link href="/">Browse Movies</Nav.Link>
+                      <Nav.Link href="https://yts.mx/login">Login</Nav.Link>
+                      <Nav.Link href="https://yts.mx/register">Register</Nav.Link>
                   </Nav>
               </Navbar.Collapse>
           </Container>

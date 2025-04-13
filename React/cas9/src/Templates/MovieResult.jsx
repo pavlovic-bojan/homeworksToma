@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Container, Row, Col, Card, Pagination } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const MovieResult = ({ movie }) => {
     const [movies, setMovies] = useState([])
@@ -88,6 +89,8 @@ const MovieResult = ({ movie }) => {
                             <Card.Body>
                                 <Card.Title className="fs-6">{movie.Title}</Card.Title>
                                 <Card.Text className="text-muted">{movie.Year}</Card.Text>
+                                {/* Dodajemo Link koji vodi na detalje filma */}
+                                <Link to={`/movie/${movie.Title.replace(/\s+/g, '_')}`} className="btn btn-primary">View Details</Link>
                             </Card.Body>
                         </Card>
                     </Col>
