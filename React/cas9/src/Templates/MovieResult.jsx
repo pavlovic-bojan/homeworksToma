@@ -88,8 +88,7 @@ const MovieResult = ({ movie }) => {
                             )}
                             <Card.Body>
                                 <Card.Title className="fs-6">{movie.Title}</Card.Title>
-                                <Card.Text className="text-muted">{movie.Year}</Card.Text>
-                                {/* Dodajemo Link koji vodi na detalje filma */}
+                                <Card.Text className="text-white">{movie.Year}</Card.Text>
                                 <Link to={`/movie/${movie.Title.replace(/\s+/g, '_')}`} className="btn btn-primary">View Details</Link>
                             </Card.Body>
                         </Card>
