@@ -6,16 +6,16 @@ const Footer = () => {
             <Container>
                 <Row>
                     <Col className="d-flex justify-content-center flex-wrap gap-4 mb-3">
-                        <a href="/blog" className="text-white text-decoration-none small">
+                        <a href="https://yts.mx/blog" className="text-white text-decoration-none small">
                             Blog
                         </a>
-                        <a href="/dmca" className="text-white text-decoration-none small">
+                        <a href="https://yts.mx/dmca" className="text-white text-decoration-none small">
                             DMCA
                         </a>
-                        <a href="/api" className="text-white text-decoration-none small">
+                        <a href="https://yts.mx/api" className="text-white text-decoration-none small">
                             API
                         </a>
-                        <a href="/rss" className="text-white text-decoration-none small">
+                        <a href="https://yts.mx/rss-guide" className="text-white text-decoration-none small">
                             RSS
                         </a>
                     </Col>
